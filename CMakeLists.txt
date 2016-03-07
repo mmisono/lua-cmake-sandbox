@@ -16,5 +16,7 @@ list(REMOVE_ITEM lua_sources
 include_directories( ${lua_path}/src )
 add_executable(hello src/hello.c ${lua_sources})
 add_executable(call_lua_function src/call_lua_function.c ${lua_sources})
+add_executable(call_c_function src/call_c_function.c ${lua_sources})
 target_link_libraries(hello m)
 target_link_libraries(call_lua_function m)
+target_link_libraries(call_c_function m)
