@@ -13,10 +13,8 @@ list(REMOVE_ITEM lua_sources
   ${lua_path}/src/luac.c
 )
 
-set(src
-    src/main.c
-)
-
 include_directories( ${lua_path}/src )
-add_executable(my_app ${src} ${lua_sources})
-target_link_libraries(my_app m)
+add_executable(hello src/hello.c ${lua_sources})
+add_executable(call_lua_function src/call_lua_function.c ${lua_sources})
+target_link_libraries(hello m)
+target_link_libraries(call_lua_function m)
